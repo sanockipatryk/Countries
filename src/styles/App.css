@@ -1,0 +1,110 @@
+.App {
+  display: flex;
+  position: relative;
+  height: 100%;
+  background: #222;
+}
+
+aside.menu {
+  min-width: 200px;
+  width: 200px;
+  height: 100vh;
+  padding: 15px 0 0 15px;
+  -webkit-box-shadow: 5px 0px 15px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 5px 0px 15px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 0px 15px 0px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  background-color: #a0ff74;
+}
+
+aside.menu .createdWith {
+  position: absolute;
+  bottom: 1%;
+  left: 7%;
+  width: calc(200px - 7%);
+}
+
+.App main {
+  position: relative;
+  min-height: 100vh;
+  left: calc(0% + 200px);
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #222;
+  color: #ddd;
+  padding: 10px 15px 10px 15px;
+}
+.countryList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: relative;
+}
+
+.countryList div.card {
+  display: inline-block;
+  border: 1px solid black;
+  flex-basis: 14%;
+  margin: 15px;
+  padding: 10px;
+  background-color: #fff;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.countryList div.card:hover {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.countryList div.card hr {
+  margin: 30px;
+}
+
+.countryList div.card div.card-content {
+  padding: 5px;
+  text-align: center;
+}
+
+.countryList div.card div.card-content div.media .media-content {
+  position: absolute;
+  bottom: 5%;
+}
+
+.countryList div.card .card-image img {
+  height: auto;
+  width: 100%;
+  border: 2px solid white;
+  -webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: 1023px) {
+  .App {
+    flex-direction: column;
+  }
+
+  .App aside.menu {
+    display: none;
+  }
+
+  .App main {
+    position: unset;
+    min-height: 100vh;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: #222;
+    color: #ddd;
+    padding: 10px 15px 10px 15px;
+  }
+  .countryList div.card {
+    display: inline-block;
+    border: 1px solid black;
+    flex-basis: 40%;
+    margin: 10px 5px;
+    padding: 5px;
+    background-color: #fff;
+  }
+}

@@ -1,0 +1,57 @@
+.App main div.continentPage h1.title.is-1 {
+  text-align: center;
+  color: #ddd;
+}
+
+div.information-page {
+  display: flex;
+  margin: 0 50px;
+}
+
+div.information-page p.title.is-4 {
+  color: #ddd;
+}
+
+section.informations {
+  flex-wrap: 1;
+  margin-top: 100px;
+  flex-basis: 60%;
+}
+
+section.flag {
+  flex-basis: 40%;
+  margin: 200px;
+}
+section.flag img {
+  width: 100%;
+}
+
+.country-title h1 {
+  margin: 0 auto;
+  text-align: center;
+  color: #ddd;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.card.country-naming,
+.card.country-geography {
+  color: #ddd;
+  display: inline-block;
+  background-color: transparent;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: none;
+}
+
+.card.country-naming table.table,
+.card.country-geography table.table {
+  color: #ddd;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.card table.table th {
+  color: #ddd;
+}

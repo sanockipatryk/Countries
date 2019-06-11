@@ -1,0 +1,47 @@
+.App nav.navbar {
+  display: none;
+}
+
+.App nav.navbar button {
+  border: none;
+  background-color: #a0ff74;
+}
+
+.App nav.navbar button:focus {
+  outline-width: 0;
+  padding: 0;
+}
+
+@media (max-width: 1023px) {
+  .App nav.navbar {
+    display: block;
+    width: 100%;
+    transition: 0.2s;
+    background-color: #a0ff74;
+  }
+
+  .App nav.navbar .navbar-brand a.navbar-item {
+    margin-bottom: 0;
+    font-weight: bold;
+    transition: 0.2s;
+  }
+  .App nav.navbar .navbar-brand a.navbar-item:hover {
+    color: black;
+    margin-left: 5px;
+  }
+  .App nav.navbar .navbar-brand a.navbar-item:focus {
+    color: black;
+  }
+
+  .App nav.navbar div.dropdown-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 52px;
+    padding: 0;
+  }
+
+  .App nav.navbar div.dropdown-content a.dropdown-item.selected {
+    background-color: #ddd;
+  }
+}
