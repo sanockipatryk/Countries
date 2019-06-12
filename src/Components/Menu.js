@@ -12,10 +12,10 @@ const Menu = () => {
 
   return (
     <aside className="menu">
-      <p className="menu-label">Site</p>
+      <p className="menu-label">Home</p>
       <ul className="menu-list">
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/">All countries</NavLink>
         </li>
       </ul>
       <p className="menu-label">Continents</p>

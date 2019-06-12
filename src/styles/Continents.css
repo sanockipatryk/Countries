@@ -3,55 +3,94 @@
   color: #ddd;
 }
 
-div.information-page {
-  display: flex;
-  margin: 0 50px;
-}
-
-div.information-page p.title.is-4 {
-  color: #ddd;
-}
-
-section.informations {
-  flex-wrap: 1;
-  margin-top: 100px;
-  flex-basis: 60%;
-}
-
-section.flag {
-  flex-basis: 40%;
-  margin: 200px;
-}
-section.flag img {
+.continentPage div.control {
   width: 100%;
-}
-
-.country-title h1 {
-  margin: 0 auto;
   text-align: center;
-  color: #ddd;
-  width: 100%;
-  border-radius: 5px;
 }
 
-.card.country-naming,
-.card.country-geography {
-  color: #ddd;
+.continentPage div.control input {
+  width: 30%;
+  border: 2px solid #ddd;
+  padding: 10px 5px;
+  font-size: 22px;
+}
+
+.countryList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: relative;
+  margin-top: 10px;
+}
+
+.countryList div.card {
   display: inline-block;
-  background-color: transparent;
-  border-radius: 5px;
-  margin: 10px;
-  box-shadow: none;
+  border: 1px solid black;
+  flex-basis: 14%;
+  margin: 15px;
+  background-color: #fff;
+  transition: 0.3s;
+  cursor: pointer;
 }
-
-.card.country-naming table.table,
-.card.country-geography table.table {
-  color: #ddd;
-  background-color: transparent;
-  border: none;
+.countryList div.card:hover {
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 
-.card table.table th {
-  color: #ddd;
+.countryList div.card hr {
+  margin: 30px;
+}
+
+.countryList div.card div.card-content {
+  padding: 5px;
+  text-align: center;
+}
+
+.countryList div.card div.card-content div.media .media-content {
+  position: absolute;
+  bottom: 5%;
+}
+
+.countryList div.card .card-image img {
+  height: auto;
+  width: 100%;
+
+  -webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: 1600px) {
+  .countryList div.card {
+    flex-basis: 16%;
+  }
+}
+
+@media (max-width: 1360px) {
+  .countryList div.card {
+    flex-basis: 20%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .countryList div.card {
+    display: inline-block;
+    border: 1px solid black;
+    flex-basis: 28%;
+    margin: 10px 5px;
+    padding: 5px;
+    background-color: #fff;
+  }
+}
+
+@media (max-width: 600px) {
+  .countryList div.card {
+    flex-basis: 40%;
+  }
+}
+
+@media (max-width: 400px) {
+  .countryList div.card {
+    flex-basis: 80%;
+  }
 }

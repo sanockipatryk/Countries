@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import InformationTable from "./InformationTable";
+import { Link } from "react-router-dom";
+import "../styles/Country.css";
 
 const mapStateToProps = state => {
   return {
@@ -21,6 +23,7 @@ class Country extends Component {
     let country = {};
     let namesInformation = [];
     let geographyInformation = [];
+    let residentsInformation = [];
     if (countries.countries.length > 0) {
       country = this.getCountry();
       namesInformation = [
@@ -29,9 +32,13 @@ class Country extends Component {
         {
           property: "Alternative spellings",
           value: country.altSpellings.join(", ")
-        },
-        { property: "Demonym", value: country.demonym }
+        }
       ];
+      const countryBorders = country.borders.map(border => (
+        <Link key={border} to={`/countries/${border}`}>
+          {`${border} `}
+        </Link>
+      ));
       geographyInformation = [
         {
           property: "Region",
@@ -46,12 +53,33 @@ class Country extends Component {
           value: country.capital
         },
         {
+          property: "Lat/Lng",
+          value: country.latlng.join(", ")
+        },
+        {
           property: "Area",
           value: (
             <span>
               {country.area}km<sup>2</sup>
             </span>
           ) //add square km
+        },
+        {
+          property: "Land borders",
+          value: countryBorders.length > 0 ? countryBorders : "None" //add square km
+        }
+      ];
+
+      residentsInformation = [
+        { property: "Resident", value: country.demonym },
+        { property: "Population", value: country.population },
+        {
+          property: "Population density",
+          value: (
+            <span>
+              {(country.population / country.area).toFixed(2)}/km<sup>2</sup>
+            </span>
+          )
         }
       ];
     }
@@ -63,6 +91,7 @@ class Country extends Component {
         <div className="country-title">
           <h1 className="title is-1">{country.name}</h1>
         </div>
+        <hr />
         <div className="information-page">
           <section className="informations">
             <div className="card country-naming">
@@ -73,9 +102,9 @@ class Country extends Component {
               <p className="title is-4">Geography</p>
               <InformationTable values={geographyInformation} />
             </div>
-            <div className="card country-geography">
-              <p className="title is-4">Geography</p>
-              <InformationTable values={geographyInformation} />
+            <div className="card country-residents">
+              <p className="title is-4">Residents</p>
+              <InformationTable values={residentsInformation} />
             </div>
           </section>
           <section className="flag">

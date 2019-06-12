@@ -1,0 +1,87 @@
+div.information-page {
+  display: flex;
+  margin: 50px 50px 0;
+}
+
+div.information-page p.title.is-4 {
+  color: #ddd;
+}
+
+section.informations {
+  flex-wrap: 1;
+
+  flex-basis: 60%;
+}
+
+section.flag {
+  flex-basis: 40%;
+  /* margin-top: 60px; */
+}
+section.flag img {
+  width: 100%;
+}
+
+.country-title h1 {
+  margin: 0 auto;
+  text-align: center;
+  color: #ddd;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.card.country-naming,
+.card.country-geography,
+.card.country-residents {
+  color: #ddd;
+  display: inline-block;
+  background-color: transparent;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: none;
+  max-width: 45%;
+}
+
+.card.country-naming table.table,
+.card.country-geography table.table,
+.card.country-residents table.table {
+  color: #ddd;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.card table.table th {
+  color: #ddd;
+}
+
+@media (max-width: 400px) {
+  .country-title h1.title.is-1 {
+    font-size: 28px;
+  }
+
+  div.information-page {
+    margin: 0 10px;
+    flex-direction: column-reverse;
+  }
+
+  section.informations {
+    flex-wrap: 1;
+    margin-top: 30px;
+    flex-basis: 60%;
+  }
+  section.informations .card {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  section.informations .card table {
+    margin: 0 auto;
+  }
+
+  section.flag {
+    flex-basis: 40%;
+    margin: 0;
+    margin-top: 30px;
+  }
+}

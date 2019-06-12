@@ -31,11 +31,6 @@ class CountryCard extends Component {
           <div className="media">
             <div className="media-content">
               <p className="title is-5">{country.name}</p>
-              {country.nativeName !== country.name ? (
-                <p className="subtitle is-6">{country.nativeName}</p>
-              ) : (
-                country.name
-              )}
             </div>
           </div>
 
