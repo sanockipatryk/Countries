@@ -24,6 +24,7 @@ class Country extends Component {
     let namesInformation = [];
     let geographyInformation = [];
     let residentsInformation = [];
+	let countryBorders;
     if (countries.countries.length > 0) {
       country = this.getCountry();
       namesInformation = [
@@ -34,11 +35,15 @@ class Country extends Component {
           value: country.altSpellings.join(", ")
         }
       ];
-      const countryBorders = country.borders.map(border => (
-        <Link key={border} to={`/countries/${border}`}>
-          {`${border} `}
-        </Link>
-      ));
+	  console.log(country.latlng);
+		if(country.borders !== undefined)
+		{
+			countryBorders = country.borders.map(border => (
+			<Link key={border} to={`/countries/${border}`}>
+				{`${border} `}
+			</Link>
+			));
+		}
       geographyInformation = [
         {
           property: "Region",
@@ -54,7 +59,7 @@ class Country extends Component {
         },
         {
           property: "Lat/Lng",
-          value: country.latlng.join(", ")
+          value: country.latlng !== undefined ? country.latlng.join(", ") : "?, ?"
         },
         {
           property: "Area",
@@ -66,7 +71,7 @@ class Country extends Component {
         },
         {
           property: "Land borders",
-          value: countryBorders.length > 0 ? countryBorders : "None" //add square km
+          value: countryBorders !== undefined && countryBorders.length > 0 ? countryBorders : "None" //add square km
         }
       ];
 

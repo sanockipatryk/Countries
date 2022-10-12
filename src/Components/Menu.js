@@ -24,13 +24,13 @@ const Menu = () => {
         <p className="menu-label">About me</p>
         <ul className="menu-list">
           <li>
-            <NavLink to="/about-me">Patryk Sanocki</NavLink>
+            <a href="https://github.com/sanockipatryk/">Patryk Sanocki</a>
           </li>
         </ul>
         <p className="menu-label">Created with</p>
         <ul className="menu-list">
           <li>
-            <a href="https://restcountries.eu/">REST Countries</a>
+            <a href="https://restcountries.com/">REST Countries</a>
           </li>
         </ul>
       </div>
